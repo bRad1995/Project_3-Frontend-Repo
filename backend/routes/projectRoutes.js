@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const { projectCtrl } = require("../controllers");
+const { isAuthenticated } = require('../middleware/index')
 
 // TODO ROUTES GO HERE
 router.get('/', projectCtrl.getProject);
-router.post("/", projectCtrl.createProject);
-router.put('/:id', projectCtrl.updateProject);
-router.delete('/:id', projectCtrl.deleteProject);
+router.post("/", isAuthenticated, projectCtrl.createProject);
+router.put('/:id', isAuthenticated, projectCtrl.updateProject);
+router.delete('/:id', isAuthenticated, projectCtrl.deleteProject);
 
 module.exports = router;

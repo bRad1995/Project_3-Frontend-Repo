@@ -46,7 +46,7 @@ const deleteProject = async (req, res) => {
     if (project.user !== req.session.currentUser._id) {
         return res.status(403)
     }
-    db.Project.findByIdAndUpdate(req.params.id, (deletedProject) => {
+    db.Project.findByIdAndDelete(req.params.id, (deletedProject) => {
         if (!deletedProject) {
             res.status(400).json({ message: "Could not delete project."});
         } else {
