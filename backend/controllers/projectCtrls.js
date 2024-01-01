@@ -4,7 +4,7 @@ const db = require("../models");
 const getProject = (req, res) => {
     db.Project.find({})
     .then((foundProject) => {
-        if(!foundPeople) {
+        if(!foundProject) {
             res.status(404).json({message: "Cannont find project."})
         } else {
             res.status(200).json({data: foundProject})
@@ -14,10 +14,7 @@ const getProject = (req, res) => {
 
 
 const createProject = (req, res) => {
-    req.body.password = bcrypt.hashSync(
-    req.body.password,
-    bcrypt.genSaltSync(10)
-);
+req.body.user = req.session.currentUser
 db.Project.create(req.body, (err, createdProject) => {
     if (err) {
         res.send(500, err);
@@ -30,24 +27,26 @@ db.Project.create(req.body, (err, createdProject) => {
 });
 };
 
-const updateProject = (req, res) => {
-    if (req.body.password) {
-        req.body.password = bcrypt.hashSync(
-            req.body.password,
-            bcrypt.genSaltSync(10) 
-        );
+const updateProject = async (req, res) => {
+    const project = await db.Project.findById(req.params.id)
+    if (project.user !== req.session.currentUser._id) {
+        return res.status(403)
     }
-    db.Project.findByIdAndUpdate(req.session.currentUser._id, req.body, { new: true }).then((updatedProject) => {
+    db.Project.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((updatedProject) => {
         if (!updatedProject) {
-            res.status(400).json({ message: "Could not update project."});
+            res.status(500).json({ message: "Internal server error."});
         } else {
             res.status(200).json({ Data: updatedProject});
         }
     });
 };
 
-const deleteProject = (req, res) => {
-    db.Project.findByIdAndUpdate(req.session.currentUser._id, (deletedProject) => {
+const deleteProject = async (req, res) => {
+    const project = await db.Project.findById(req.params.id)
+    if (project.user !== req.session.currentUser._id) {
+        return res.status(403)
+    }
+    db.Project.findByIdAndUpdate(req.params.id, (deletedProject) => {
         if (!deletedProject) {
             res.status(400).json({ message: "Could not delete project."});
         } else {
