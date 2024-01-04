@@ -5,7 +5,7 @@ const getProjects = (req, res) => {
     db.Project.find({})
     .then((foundProjects) => {
         if(!foundProjects) {
-            res.status(404).json({message: "Cannont find projects."})
+            res.status(404).json({message: "Cannot find projects."})
         } else {
             res.status(200).json({data: foundProjects})
         }
@@ -13,10 +13,10 @@ const getProjects = (req, res) => {
 };
 
 const getProject = (req, res) => {
-    db.Project.findById({})
+    db.Project.findById(req.params.id)
     .then((foundProject) => {
         if(!foundProject) {
-            res.status(404).json({message: "Cannon find project."})
+            res.status(404).json({message: "Cannot find project."})
         } else {
             res.status(200).json({data: foundProject})
         }
