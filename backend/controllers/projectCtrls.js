@@ -13,7 +13,7 @@ const getProjects = (req, res) => {
 };
 
 const getProject = (req, res) => {
-    db.Project.find({})
+    db.Project.findById({})
     .then((foundProject) => {
         if(!foundProject) {
             res.status(404).json({message: "Cannon find project."})
