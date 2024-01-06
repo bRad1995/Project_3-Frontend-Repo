@@ -17,6 +17,7 @@
 //     }
 // };
 
+
 // const createUser = (req, res) => {
 //     req.body.password = bcrypt.hashSync(
 //         req.body.password,
@@ -33,6 +34,7 @@
 //         }
 //     });
 // };
+
 
 // const updateUser = (req, res) => {
 //     if (req.body.password) {

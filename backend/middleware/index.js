@@ -1,3 +1,4 @@
+
 // const isAuthenticated = (req, res, next) => {
 //     if (req.session.currentUser) {
 //         return next();
@@ -9,3 +10,5 @@
 // module.exports = {
 //     isAuthenticated,
 // }
+
+

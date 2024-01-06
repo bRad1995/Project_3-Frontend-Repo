@@ -66,6 +66,7 @@ function SignUp() {
       }
   },[navigate,isRegisterSuccess])
 
+
   return (
     <Container className="d-flex justify-content-center">
       <Row style={{ width: "25rem" }}>
@@ -74,6 +75,7 @@ function SignUp() {
           <Card.Img variant="top img-fit" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             <Card.Body>
               <Card.Title>Register A New User</Card.Title>
+
               <ToastContainer/>
               <Form onSubmit={formik.handleSubmit}>
               <Form.Group
@@ -97,7 +99,9 @@ function SignUp() {
                     required
                     type="password"
                     placeholder="Password"
+
                     value={formik.values.password} onChange={formik.handleChange("password")}/>
+
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
 

@@ -19,7 +19,6 @@ function NewProject(props) {
     const [tags, setTags] = useState("")
     const [repolink, setRepolink] = useState("")
     const [deployedlink, setDeployedlink] = useState("")
-
     const projectState = useSelector((state)=>state.project)
     const {isError,isProjectSuccess,message} = projectState
     // console.log(postState);
@@ -64,6 +63,7 @@ function NewProject(props) {
             }
         })
     }
+
   return (
     <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row>
@@ -71,6 +71,7 @@ function NewProject(props) {
         <ToastContainer/>
           <h1>New Project</h1>
           <Form onSubmit="">
+
             <Form.Group
               className="mb-3 text-start"
               controlId="validationCustom01"
@@ -79,6 +80,7 @@ function NewProject(props) {
               <Form.Control
                 required
                 type="text"
+
                 placeholder="Name"
                 value={name} onChange={(e)=>setName(e.target.value)}
                 
@@ -95,7 +97,9 @@ function NewProject(props) {
                 required
                 as="textarea"
                 placeholder="Description"
+
                 value={description} onChange={(e)=>setDescription(e.target.value)}
+
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -109,6 +113,7 @@ function NewProject(props) {
                 type="text"
                 placeholder="Tech Stack"
                 value={techused} onChange={(e)=>setTechused(e.target.value)}
+
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -120,7 +125,9 @@ function NewProject(props) {
               <Form.Control
                 type="text"
                 placeholder="Tags"
+
                 value={tags} onChange={(e)=>setTags(e.target.value)}
+
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -133,7 +140,9 @@ function NewProject(props) {
                 required
                 type="text"
                 placeholder="GitHub Link"
+
                 value={repolink} onChange={(e)=>setRepolink(e.target.value)}
+
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -146,7 +155,9 @@ function NewProject(props) {
                 required
                 type="text"
                 placeholder="Deployed Project"
+
                 value={deployedlink} onChange={(e)=>setDeployedlink(e.target.value)}
+
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -160,9 +171,11 @@ function NewProject(props) {
                 type="file"
                 placeholder="Image"
                 value={image} onChange={(e)=>setImage(e.target.value)}
+
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
+
 
             <Button type="submit" variant="success" onClick={projectData}>
               Add Project
@@ -359,3 +372,4 @@ export default NewProject;
 // }
 
 // export default NewProject;
+

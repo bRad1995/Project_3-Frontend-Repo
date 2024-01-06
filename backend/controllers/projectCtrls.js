@@ -1,10 +1,12 @@
 const Project = require("../models/Project")
 
+
 exports.createProject = async(req,res)=>{
     const {name,description,pic} = req.body
     if(!name|| !description || !pic){
         return res.status(400).json({msg:"Please add all fields"})
     }
+
     req.user.password = undefined
     const post = new Post({
         name,
@@ -138,4 +140,5 @@ exports.getAllProjects =async(req,res)=>{
 //     updateProject,
 //     deleteProject,
 // };
+
 
