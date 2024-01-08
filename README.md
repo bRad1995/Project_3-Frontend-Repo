@@ -4,6 +4,11 @@ devPort - Developer Port
 
 A full CRUD app designed to provide community and a showplace for software developers
 
+<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/SignUpPage_ugvwdh.png">
+<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/LogInPage_sw6ti8.png">
+<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/devPort_home_ltyros.png">
+<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/ProjectPage_mlfhys.png">
+<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/NewProjectPage_s6lnm5.png">
 
 
 Combining the reach of social media and the power of online networking, we have designed an app that creates a place for software engineers to display their portfolios. Each profile contains a representational image for the portfolio projects, links to the live project, as well as a link to the developer’s GitHub.
