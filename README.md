@@ -7,7 +7,7 @@ A full CRUD app designed to provide community and a showplace for software devel
 <img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/SignUpPage_ugvwdh.png">
 <img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/LogInPage_sw6ti8.png">
 <img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/devPort_home_ltyros.png">
-<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/ProjectPage_mlfhys.png">
+<img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704758357/ProjectPage_qo2kyu.png">
 <img src="https://res.cloudinary.com/dzbkpvk1h/image/upload/v1704757622/NewProjectPage_s6lnm5.png">
 
 
